@@ -41,6 +41,9 @@ namespace ProductReviewManagement
 
             //UC 4
             ProductManagement.RetrieveCountOfReviewsForEachProductID(productReviewList);
+
+            //UC 5
+            ProductManagement.RetrieveOnlyProductIDAndReviewOfAllRecords(productReviewList);
         }
     }
 }
