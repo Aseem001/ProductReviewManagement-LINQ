@@ -28,7 +28,7 @@ namespace ProductReviewManagement
                 new ProductReview(){ProductID=1,UserID=9,Rating=2,Review="Satisfactory",IsLike=false },
                 new ProductReview(){ProductID=9,UserID=5,Rating=1,Review="Poor     ",IsLike=false }
             };
-            Printing all contents of the list
+            //Printing all contents of the list
             foreach (var v in productReviewList)
             {
                 Console.WriteLine($"ProductID:{v.ProductID}\tUserID:{v.UserID}\tRating:{v.Rating}\tReview:{v.Review}\tIsLike:{v.IsLike}");
@@ -37,8 +37,10 @@ namespace ProductReviewManagement
             ProductManagement.RetrieveTopThreeHighRatedRecords(productReviewList);
 
             //UC 3
-            ProductManagement.RetrieveRecordsWithGreaterThanThreeRating(productReviewList);
-            Console.ReadLine();
+            ProductManagement.RetrieveRecordsWithGreaterThanThreeRating(productReviewList);            
+
+            //UC 4
+            ProductManagement.RetrieveCountOfReviewsForEachProductID(productReviewList);
         }
     }
 }
