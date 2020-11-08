@@ -53,6 +53,9 @@ namespace ProductReviewManagement
 
             //UC 8
             ProductReviewDataTable.AddDataIntoDataTable();
+
+            //UC 9
+            ProductReviewDataTable.RetrieveAllRecordsWhoseIsLikeIsTrue();
         }
     }
 }

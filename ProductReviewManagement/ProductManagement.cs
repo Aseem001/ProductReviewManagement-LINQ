@@ -48,11 +48,11 @@ namespace ProductReviewManagement
         /// <param name="productList">The product list.</param>
         public static void RetrieveCountOfReviewsForEachProductID(List<ProductReview> productList)
         {
-            var retrievedDate = (from products in productList
+            var retrievedData = (from products in productList
                                   group products by products.ProductID into g
                                   select new { ProductID = g.Key, Count = g.Count() });
             Console.WriteLine("\nProductId and their review count:");
-            foreach(var v in retrievedDate)
+            foreach(var v in retrievedData)
             {
                 Console.WriteLine($"ProductID:{v.ProductID},ReviewCount:{v.Count}");
             }
@@ -64,10 +64,10 @@ namespace ProductReviewManagement
         /// <param name="productList">The product list.</param>
         public static void RetrieveOnlyProductIDAndReviewOfAllRecords(List<ProductReview> productList)
         {
-            var retrievedDate = (from products in productList
+            var retrievedData = (from products in productList
                                  select new { ProductId=products.ProductID, Review=products.Review });
             Console.WriteLine("\nProductId and its review:");
-            foreach (var v in retrievedDate)
+            foreach (var v in retrievedData)
             {
                 Console.WriteLine($"ProductID:{v.ProductId},ReviewCount:{v.Review}");
             }
@@ -79,10 +79,10 @@ namespace ProductReviewManagement
         /// <param name="productList">The product list.</param>
         public static void SkipTopFiveRecordsAndDisplayOthers(List<ProductReview> productList)
         {
-            var retrievedDate = (from products in productList
+            var retrievedData = (from products in productList
                                  select products).Skip(5);
             Console.WriteLine("\nSkip top 5 records and display others:");
-            foreach (var v in retrievedDate)
+            foreach (var v in retrievedData)
             {
                 Console.WriteLine($"ProductID:{v.ProductID}\tUserID:{v.UserID}\tRating:{v.Rating}\tReview:{v.Review}\tIsLike:{v.IsLike}");
             }
@@ -94,9 +94,9 @@ namespace ProductReviewManagement
         /// <param name="productList">The product list.</param>
         public static void RetrieveOnlyProductIDAndReviewOfAllRecordsUsingSelect(List<ProductReview> productList)
         {
-            var retrievedDate = productList.Select(x => new { ProductId = x.ProductID, Review = x.Review });
+            var retrievedData = productList.Select(x => new { ProductId = x.ProductID, Review = x.Review });
             Console.WriteLine("\nProductId and its review using LINQ select:");
-            foreach (var v in retrievedDate)
+            foreach (var v in retrievedData)
             {
                 Console.WriteLine($"ProductID:{v.ProductId},ReviewCount:{v.Review}");
             }
