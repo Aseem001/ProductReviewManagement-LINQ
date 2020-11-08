@@ -46,7 +46,10 @@ namespace ProductReviewManagement
             ProductManagement.RetrieveOnlyProductIDAndReviewOfAllRecords(productReviewList);
 
             //UC 6
-            ProductManagement.SkipTopFiveRecordsAndDisplayOthers(productReviewList);            
+            ProductManagement.SkipTopFiveRecordsAndDisplayOthers(productReviewList);
+
+            //UC 7
+            ProductManagement.RetrieveOnlyProductIDAndReviewOfAllRecordsUsingSelect(productReviewList);
         }
     }
 }
