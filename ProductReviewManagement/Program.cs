@@ -62,6 +62,11 @@ namespace ProductReviewManagement
 
             //UC 11
             ProductReviewDataTable.RetrieveRecordsWithParticularReviewMessage();
+
+            //UC 12
+            ProductReviewDataTable.RetrieveRecordsForGivenUserIdSortedByRating();
+
+            Console.ReadLine();
         }
     }
 }
