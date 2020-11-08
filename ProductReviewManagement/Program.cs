@@ -59,6 +59,9 @@ namespace ProductReviewManagement
 
             //UC 10
             ProductReviewDataTable.FindAverageRatingForEachProductId();
+
+            //UC 11
+            ProductReviewDataTable.RetrieveRecordsWithParticularReviewMessage();
         }
     }
 }

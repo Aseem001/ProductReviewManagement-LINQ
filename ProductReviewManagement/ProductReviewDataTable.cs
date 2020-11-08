@@ -75,5 +75,21 @@ namespace ProductReviewManagement
                 Console.WriteLine($"ProductID:{v.ProductId},AverageRating:{v.Average}");
             }
         }
+
+        /// <summary>
+        /// UC 11 : Retrieves all records with given review message.
+        /// </summary>
+        public static void RetrieveRecordsWithParticularReviewMessage()
+        {
+            //var retrievedData = productDataTable.AsEnumerable().GroupBy(r => r.Field<int>("ProductId")).Select(x => new { ProductId = x.Key, Average = x.Average(r => r.Field<double>("Rating")) });
+            var retrievedData = from records in productDataTable.AsEnumerable()
+                                where (records.Field<string>("Review") == "Nice     ")
+                                select records;
+            Console.WriteLine("\nRecords in table whose Review message=Nice:");
+            foreach (var v in retrievedData)
+            {
+                Console.WriteLine($"ProductID:{v.Field<int>("ProductId")}\tUserID:{v.Field<int>("UserId")}\tRating:{v.Field<double>("Rating")}\tReview:{v.Field<string>("Review")}\tIsLike:{v.Field<bool>("IsLike")}");
+            }
+        }
     }
 }
